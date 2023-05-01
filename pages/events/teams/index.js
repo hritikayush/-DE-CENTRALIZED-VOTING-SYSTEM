@@ -18,7 +18,6 @@ class TeamIndex extends Component {
         const { address } = props.query;
         const event_vote = EventVoting(address);
         const teamsCount = await event_vote.methods.getTeamsCount().call();
-        this.setState({ event_vote });
         //const registeredVotesCount = await event_vote.methods.registerdvoters_count().call();
 
         const teams = await Promise.all(
