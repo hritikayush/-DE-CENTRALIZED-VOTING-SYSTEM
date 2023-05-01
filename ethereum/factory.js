@@ -3,7 +3,7 @@ import EventFactory from './build/EventFactory.json';
 
 const instance = new web3.eth.Contract(
     JSON.parse(EventFactory.interface),
-    '0x7Caf8d355d73EFb38cEDb2F5f452708E3094c7dB'
+    '0xb158E23b496Ed74Ea7d059F88C94ce0069b9Ea9e'
 );
 
 export default instance;

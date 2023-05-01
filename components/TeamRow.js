@@ -3,13 +3,14 @@ import { Table, Button } from 'semantic-ui-react';
 import web3 from '../ethereum/web3';
 import EventVoting from '../ethereum/events';
 import factory from '../ethereum/factory';
+import {Link,Router} from '../routes';
 class TeamRow extends Component {
 
     onVote = async () => {
         const event_vote = EventVoting(this.props.address);
         const accounts = await web3.eth.getAccounts();
         if (accounts.length > 0) {
-            await event_vote.methods.vote_here(this.props.id).send({ from: accounts[0] });
+            await event_vote.methods.voteHere(this.props.id).send({ from: accounts[0] });
         } else {
             console.error("No accounts found!");
         }

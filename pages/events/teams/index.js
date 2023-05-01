@@ -5,7 +5,11 @@ import { Link } from '../../../routes';
 import EventVoting from '../../../ethereum/events';
 import TeamRow from '../../../components/TeamRow';
 import web3 from '../../../ethereum/web3';
+import { Router } from '../../../routes';
 class TeamIndex extends Component {
+    state ={
+        errorMessage : ''
+    };
     static async getInitialProps(props) {
         const { address } = props.query;
         const event_vote = EventVoting(address);
@@ -35,9 +39,11 @@ class TeamIndex extends Component {
     }
 
     onClose = async () => {
-        const event_vote = EventVoting(this.props.address);
+        //const event_vote = EventVoting(this.props.address);
         const accounts = await web3.eth.getAccounts();
-        await event_vote.methods.close_voting().send({from:accounts[0]});
+        await event_vote.methods.closeVoting().send({from:accounts[0]});
+        Router.pushRoute(`/events/${this.props.address}/teams/winner`)
+
     };
 
     render() {

@@ -36,7 +36,7 @@ class EventNew extends Component{
                 <h3>Organize an Event!</h3>
                 <Form onSubmit={this.onSubmit} error={this.state.errorMessage}>
                     <Form.Field>
-                    <lebel>Enter the nae of the event !!</lebel>
+                    <lebel>Enter the name of the event !!</lebel>
                     <Input 
                         value = {this.state.event_desc}
                         onChange = {event => 
