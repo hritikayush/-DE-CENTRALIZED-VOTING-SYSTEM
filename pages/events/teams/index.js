@@ -11,6 +11,9 @@ class TeamIndex extends Component {
         errorMessage : '',
         event_vote : null
     };
+    componentDidMount() {
+        this.setState({ event_vote: this.props.event_vote });
+    }
     static async getInitialProps(props) {
         const { address } = props.query;
         const event_vote = EventVoting(address);
@@ -38,9 +41,6 @@ class TeamIndex extends Component {
             //registeredVotesCount = {this.props.registeredVotesCount}
             />
         })
-    }
-    componentDidMount() {
-        this.setState({ event_vote: this.props.event_vote });
     }
     onClose = async () => {
         //const event_vote = EventVoting(this.props.address);
