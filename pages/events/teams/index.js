@@ -39,10 +39,14 @@ class TeamIndex extends Component {
     }
     onClose = async () => {
         //const event_vote = EventVoting(this.props.address);
+        const event_vote = EventVoting(this.props.address);
         const accounts = await web3.eth.getAccounts();
         await event_vote.methods.closeVoting().send({from:accounts[0]});
         Router.pushRoute(`/events/${this.props.address}/teams/winner`)
+    };
+    onClick = async()=>{
 
+        Router.pushRoute(`/events/${this.props.address}/teams/winner`)
     };
 
     render() {
@@ -74,6 +78,7 @@ class TeamIndex extends Component {
                 <div><h2>Number of teams currently : {this.props.teamsCount} .</h2></div>
                 <h1>In order to close voting poll in this event !</h1>
                 <Button color="teal" floated='right' onClick={this.onClose}>Close Voting!</Button>
+                <Button color="teal" floated='right' onClick={this.onClick}>Show Winner!</Button>
             </Layout>
         );
     }

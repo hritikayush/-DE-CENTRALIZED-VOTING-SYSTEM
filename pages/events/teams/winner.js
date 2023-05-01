@@ -6,12 +6,13 @@ import Layout from '../../../components/Layout';
 
 class WinnerIndex extends Component{
     static async getInitialProps(props){
-        const { address } = props.querry;
+        const { address } = props.query;
         const event_vote = EventVoting( address );
         const winner = await event_vote.methods.showWinner().call();
-        return winner;
+        return {winner,address};
     }
     render(){
+        //console.log(this.props.address);
         return (
             <Layout>
             <div>

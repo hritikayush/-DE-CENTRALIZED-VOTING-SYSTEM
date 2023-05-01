@@ -88,7 +88,7 @@ contract EventVoting{
     
     function showWinner() public view returns (string memory) {
         require(goingOn==false);
-        string memory winner = "";
+        string memory winner = "No one is the winner.";
         uint256 maxVotes = 0;
         for(uint256 i=0; i<teams.length; i++)
         {
