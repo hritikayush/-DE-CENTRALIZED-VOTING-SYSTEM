@@ -28,34 +28,43 @@ class EventNew extends Component{
             this.setState({errorMessage : err.message});
         }
         this.setState({loading : false});
-    };
-
-    render(){
-        return(
+    };render() {
+        return (
             <Layout>
-                <h3>Organize an Event!</h3>
-                <Form onSubmit={this.onSubmit} error={this.state.errorMessage}>
+                <script src="https://cdn.tailwindcss.com"></script>
+                <div class="h-screen bg-gradient-to-r from-rose-100 to-teal-100">
+                <div class="animate-bounce flex justify-center h-6 m-20 ">
+                    <h3 class="font-semibold text-5xl m-10 pu-5">Create an Event!</h3>
+                </div>
+
+                <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
                     <Form.Field>
-                    <lebel>Enter the name of the event !!</lebel>
-                    <Input 
-                        value = {this.state.event_desc}
-                        onChange = {event => 
-                            this.setState({event_desc : event.target.value})}
-                    />
-                    <lebel>Mention the domain of your event and brief about your event !!</lebel>
-                    <TextArea 
-                        value = {this.state.event_name}
-                        onChange = {event => 
-                            this.setState({event_name : event.target.value})}
-                    />
+                        <div class="text-white p-20 m-40 bg-gradient-to-r from-gray-700 via-gray-900 to-black text-center md:text-left space-y-4 text-lg font-medium">
+                            <label>Enter the domain in which you want to organize an event !!</label>
+                            <Input
+                                value={this.state.event_desc}
+                                onChange={event =>
+                                    this.setState({ event_desc: event.target.value })}
+                            />
+                            <label>Describe about your organizing event !!</label>
+                            <TextArea
+                                value={this.state.event_name}
+                                onChange={event =>
+                                    this.setState({ event_name: event.target.value })}
+                            />
+                        </div>
                     </Form.Field>
-                    <Message error header="OOPS !!" content= {this.state.errorMessage}/>
-                    <Button loading = {this.state.loading}
-                        primary floated = "right">Create !</Button>
+
+                    <Message error header="OOPS !!" content={this.state.errorMessage} />
+                    <div class="flex justify-center">
+                        <button class="animate-pulse rounded-lg cursor-pointer mb-8 p-2 mt-5 text-center bg-gradient-to-r from-gray-700 via-gray-900 to-black hover:from-pink-500 hover:to-yellow-500 text-white font-semibold px-6 py-3 h-12 w-48 "
+                        loading={this.state.loading}>Create !</button>
+                    </div>
                 </Form>
+                </div>
             </Layout>
         );
     };
 }
 
-export default EventNew;
+export default EventNew;
