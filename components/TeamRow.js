@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Table, Button } from 'semantic-ui-react';
 import web3 from '../ethereum/web3';
 import EventVoting from '../ethereum/events';
-
+import factory from '../ethereum/factory';
 class TeamRow extends Component {
+
     onVote = async () => {
         const event_vote = EventVoting(this.props.address);
         const accounts = await web3.eth.getAccounts();
@@ -13,6 +14,7 @@ class TeamRow extends Component {
             console.error("No accounts found!");
         }
     };
+    //const going_on = await event_vote.methods.going_on().call();
     render() {
         const { Row, Cell } = Table;
         const { id, team, registeredVotesCount } = this.props;
@@ -31,4 +33,4 @@ class TeamRow extends Component {
         );
     }
 }
-export default TeamRow;
+export default TeamRow ;

@@ -36,13 +36,13 @@ class EventNew extends Component{
                 <h3>Organize an Event!</h3>
                 <Form onSubmit={this.onSubmit} error={this.state.errorMessage}>
                     <Form.Field>
-                    <lebel>Enter the domain in which you want to oranize an event !!</lebel>
+                    <lebel>Enter the nae of the event !!</lebel>
                     <Input 
                         value = {this.state.event_desc}
                         onChange = {event => 
                             this.setState({event_desc : event.target.value})}
                     />
-                    <lebel>Describe about your' organizing event !!</lebel>
+                    <lebel>Mention the domain of your event and brief about your event !!</lebel>
                     <TextArea 
                         value = {this.state.event_name}
                         onChange = {event => 

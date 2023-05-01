@@ -4,17 +4,23 @@ import {Card} from 'semantic-ui-react';
 import {Button} from 'semantic-ui-react';
 import Layout from '../components/Layout';
 import {Link} from '../routes';
-
+import EventVoting from '../ethereum/events';
 class EventIndex extends Component {
-    static async getInitialProps(){
+    state = {
+        event_num: 1
+    };
+    static async getInitialProps(props){
         const events = await factory.methods.getDeployedEvents().call();
-        return {events};
+        return{
+            events
+        };
     }
 
     renderEvents () {
-        const items = this.props.events.map(address =>{
-            return{
-                header : address ,
+        const items = this.props.events.map((address,index) =>{
+            const header = `Event ${this.state.event_num + index} @${address}`;
+            return{ 
+                header,
                 description : (
                 <Link route = {`/events/${address}`}>
                     <a>View this Event</a>

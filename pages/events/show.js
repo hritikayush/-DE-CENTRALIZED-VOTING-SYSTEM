@@ -4,7 +4,6 @@ import EventVoting from '../../ethereum/events';
 import {Card, Grid, Button} from 'semantic-ui-react';
 import {Link} from '../../routes';
 import web3 from '../../ethereum/web3';
-
 class EventShow extends Component {
     static async getInitialProps(props){
         const event_v = EventVoting(props.query.address);
@@ -18,7 +17,6 @@ class EventShow extends Component {
             manager : summary[4]
         };
     }
-
     renderCards(){
         const {
             event_name,
