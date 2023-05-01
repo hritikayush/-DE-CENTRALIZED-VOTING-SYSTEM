@@ -8,12 +8,14 @@ import web3 from '../../../ethereum/web3';
 import { Router } from '../../../routes';
 class TeamIndex extends Component {
     state ={
-        errorMessage : ''
+        errorMessage : '',
+        event_vote : null
     };
     static async getInitialProps(props) {
         const { address } = props.query;
         const event_vote = EventVoting(address);
         const teamsCount = await event_vote.methods.getTeamsCount().call();
+        this.setState({ event_vote });
         //const registeredVotesCount = await event_vote.methods.registerdvoters_count().call();
 
         const teams = await Promise.all(
@@ -37,9 +39,12 @@ class TeamIndex extends Component {
             />
         })
     }
-
+    componentDidMount() {
+        this.setState({ event_vote: this.props.event_vote });
+    }
     onClose = async () => {
         //const event_vote = EventVoting(this.props.address);
+        const { event_vote } = this.state;
         const accounts = await web3.eth.getAccounts();
         await event_vote.methods.closeVoting().send({from:accounts[0]});
         Router.pushRoute(`/events/${this.props.address}/teams/winner`)
