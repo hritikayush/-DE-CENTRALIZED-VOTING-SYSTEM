@@ -4,7 +4,7 @@ import React from 'react';
 import Header from './Header';
 import { Container } from 'semantic-ui-react';
 import Head from'next/head';    //Head is a component which can be auto used with another component
-// class="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
+// className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
 export default props  =>{
     return(
         <div>

@@ -11,11 +11,11 @@ class EventNew extends Component{
         event_name : '' ,
         event_desc : '' ,
         errorMessage : '',
-        loading : false
+        loading : "false"
     };
     onSubmit = async (event) =>{
         event.preventDefault();
-        this.setState({loading : true, errorMessage : ''});
+        this.setState({loading : "true", errorMessage : ''});
         try{
         const accounts = await web3.eth.getAccounts();
         await factory.methods.createEvent(this.state.event_name,this.state.event_desc)
@@ -23,22 +23,22 @@ class EventNew extends Component{
             from : accounts[0]
         });
         Router.pushRoute('/');
-    }
+        }
         catch(err){
             this.setState({errorMessage : err.message});
         }
-        this.setState({loading : false});
+        this.setState({loading : "false"});
     };render() {
         return (
             <Layout>
-                <div class="h-screen bg-gradient-to-r from-rose-100 to-teal-100">
-                <div class="animate-bounce flex justify-center h-6 m-20 ">
-                    <h3 class="font-semibold text-5xl m-10 pu-5">Create an Event!</h3>
+                <div className="h-screen bg-gradient-to-r from-rose-100 to-teal-100">
+                <div className="animate-bounce flex justify-center h-6 m-20 ">
+                    <h3 className="font-semibold text-5xl m-10 pu-5">Create an Event!</h3>
                 </div>
 
                 <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
                     <Form.Field>
-                        <div class="text-white p-20 m-40 bg-gradient-to-r from-gray-700 via-gray-900 to-black text-center md:text-left space-y-4 text-lg font-medium">
+                        <div className="text-white p-20 m-40 bg-gradient-to-r from-gray-700 via-gray-900 to-black text-center md:text-left space-y-4 text-lg font-medium">
                             <label>Enter the domain in which you want to organize an event !!</label>
                             <Input
                                 value={this.state.event_desc}
@@ -55,8 +55,8 @@ class EventNew extends Component{
                     </Form.Field>
 
                     <Message error header="OOPS !!" content={this.state.errorMessage} />
-                    <div class="flex justify-center">
-                        <button class="animate-pulse rounded-lg cursor-pointer mb-8 p-2 mt-5 text-center bg-gradient-to-r from-gray-700 via-gray-900 to-black hover:from-pink-500 hover:to-yellow-500 text-white font-semibold px-6 py-3 h-12 w-48 "
+                    <div className="flex justify-center">
+                        <button className="animate-pulse rounded-lg cursor-pointer mb-8 p-2 mt-5 text-center bg-gradient-to-r from-gray-700 via-gray-900 to-black hover:from-pink-500 hover:to-yellow-500 text-white font-semibold px-6 py-3 h-12 w-48 "
                         loading={this.state.loading}>Create !</button>
                     </div>
                 </Form>

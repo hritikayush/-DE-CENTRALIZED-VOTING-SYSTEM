@@ -23,7 +23,7 @@ class TeamRow extends Component {
                 <Cell>{team.description}</Cell>
                 <Cell>{team.votesCount}</Cell>
                 <Cell>
-                    <button class="text-3xl text-center font-semibold place-content-center italic pu-5 border-2 rounded-md border-zinc-200 shadow-md text-black Pastel bg-gradient-to-tr from-green-400 to-cyan-300  hover:from-green-500 hover:to-cyan-500 hover:text-black" basic onClick={this.onVote}>
+                    <button className="text-3xl text-center font-semibold place-content-center italic pu-5 border-2 rounded-md border-zinc-200 shadow-md text-black Pastel bg-gradient-to-tr from-green-400 to-cyan-300  hover:from-green-500 hover:to-cyan-500 hover:text-black" onClick={this.onVote}>
                         Vote for it!</button>
                 </Cell>
             </Row>

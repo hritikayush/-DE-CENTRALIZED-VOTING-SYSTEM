@@ -54,7 +54,7 @@ class EventShow extends Component {
 
         ];
         return (
-            <div class="text-3xl italic bg-gradient-to-r from-cyan-600 via-blue-700 to-green-600 shadow-md p-4">
+            <div className="text-3xl italic bg-gradient-to-r from-cyan-600 via-blue-700 to-green-600 shadow-md p-4">
                 <Card.Group items={items} />
             </div>
             );
@@ -64,24 +64,24 @@ class EventShow extends Component {
             <div>
                 <script src="https://cdn.tailwindcss.com"></script>
                 <Layout>
-                <div class="h-screen bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-gray-900 to-gray-600 ">
-                        <div class="mx-auto animate-pulse  bg-slate-200 w-1/2">
-                        <div class="italics text-center text-5xl font-semibold m-4">
+                <div className="h-screen bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-gray-900 to-gray-600 ">
+                        <div className="mx-auto animate-pulse  bg-slate-200 w-1/2">
+                        <div className="italics text-center text-5xl font-semibold m-4">
                             <h2>Event Show</h2>
                         </div>
                         </div>
                         
-                        <div class="m-10 p-5 flex justify-center ">
+                        <div className="m-10 p-5 flex justify-center ">
                             <Grid>
 
                                 <Grid.Column>
                                     {this.renderCards()}
                                     <br></br>
-                                    <h3 class="border-solid border-4 bg-gradient-to-r from-gray-800 via-slate-600 to-blue-300 text-white rounded-xl h-20 pt-3 text-5xl text-center font-semibold ">To view all the teams participating in this Event...</h3>
+                                    <h3 className="border-solid border-4 bg-gradient-to-r from-gray-800 via-slate-600 to-blue-300 text-white rounded-xl h-20 pt-3 text-5xl text-center font-semibold ">To view all the teams participating in this Event...</h3>
                                     <Link route={`/events/${this.props.address}/teams`}>
                                         <a>
                                             <button type="button"
-                                                class="text-xl flex justify-center mx-auto rounded-lg cursor-pointer animate-bounce p-2 mt-5 text-white font-bold px-6 py-3 h-12 w-48 bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 hover:from-pink-500 hover:to-yellow-500">View all team!
+                                                className="text-xl flex justify-center mx-auto rounded-lg cursor-pointer animate-bounce p-2 mt-5 text-white font-bold px-6 py-3 h-12 w-48 bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 hover:from-pink-500 hover:to-yellow-500">View all team!
                                             </button>
                                         </a>
                                     </Link>

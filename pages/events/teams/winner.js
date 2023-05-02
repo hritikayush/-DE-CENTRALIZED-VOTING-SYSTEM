@@ -16,14 +16,14 @@ class WinnerIndex extends Component {
     //console.log(this.props.address);
     return (
       <Layout>
-        <div class=" h-screen text-white bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-gray-900 to-gray-600 flex justify-center">
+        <div className=" h-screen text-white bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-gray-900 to-gray-600 flex justify-center">
           
-            <div class="m-auto text-center text-6xl">
-              <h1 class=" animate-bounce text-cyan-300">
+            <div className="m-auto text-center text-6xl">
+              <h1 className=" animate-bounce text-cyan-300">
                 The winner of this event is :{" "}
               </h1>
               <br></br>
-              <p class="animate-pulse text-8xl">{this.props.winner}</p>
+              <p className="animate-pulse text-8xl">{this.props.winner}</p>
             </div>
           </div>
         

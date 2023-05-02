@@ -30,7 +30,7 @@ class EventIndex extends Component {
         });
         return (
             <div>
-                <div class=" animate-pulse delay-150 border-solid border-white rounded-md shadow-xl font-semibold text-center p-10 ">
+                <div className=" animate-pulse delay-150 border-solid border-white rounded-md shadow-xl font-semibold text-center p-10 ">
                     <Card.Group items={items} />
                 </div>
             </div>
@@ -40,16 +40,16 @@ class EventIndex extends Component {
     render() {
         return (
             <Layout><script src="https://cdn.tailwindcss.com"></script>
-                <div class="bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-gray-900 to-gray-600">
+                <div className="bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-gray-900 to-gray-600">
                     <link
                         rel="stylesheet"
                         href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css">
                     </link>
-                    <div class="flex justify-center pt-7">
-                        <img class="w-1/2 border-solid border-slate-950 rounded-lg pl-12 pr-12 bg-contain bg-center" src="https://www.miamidade.gov/resources/images/news/2020-06-22-three-ways-to-vote.jpg" alt="voting"></img>
+                    <div className="flex justify-center pt-7">
+                        <img className="w-1/2 border-solid border-slate-950 rounded-lg pl-12 pr-12 bg-contain bg-center" src="https://www.miamidade.gov/resources/images/news/2020-06-22-three-ways-to-vote.jpg" alt="voting"></img>
                     </div>
     
-                    <h2 class="rounded-lg py-7 text-3xl font-bold underline text-cliffordh-24 h-24 
+                    <h2 className="rounded-lg py-7 text-3xl font-bold underline text-cliffordh-24 h-24 
                 bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-gray-700 to-gray-500 text-white text-center bg-opacity-70">
                         OnGoing Events !</h2>
                     {this.renderEvents()}
@@ -57,7 +57,7 @@ class EventIndex extends Component {
                     <Link route="/events/new">
                         <a>
     
-                            <button type="button" class="flex justify-center mx-auto rounded-lg cursor-pointer animate-bounce delay-300 p-2 mt-5 text-white font-semibold px-6 py-3 h-12 w-48 
+                            <button type="button" className="flex justify-center mx-auto rounded-lg cursor-pointer animate-bounce delay-300 p-2 mt-5 text-white font-semibold px-6 py-3 h-12 w-48 
                         bg-gradient-to-r from-blue-600 via-blue-700 to-blue-900 hover:from-pink-500 hover:to-yellow-500">
                                 Create an Event
                             </button>
