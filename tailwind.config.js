@@ -5,6 +5,9 @@ module.exports = {
     "./index.html",
     "./pages/**/*.{js,ts,jsx,tsx}"
   ],
+  variants: {
+    animation: ['responsive', 'motion-safe', 'motion-reduce']
+  },
   theme: {
     extend: {},
   },

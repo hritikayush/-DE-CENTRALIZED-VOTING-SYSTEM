@@ -25,13 +25,7 @@ class EventShow extends Component {
             registeredvoters_Count,
             manager
         } = this.props;
-        const items = [
-            {
-                header : manager,
-                meta : 'Address of the Manager',
-                description : 'The manager who created this event and can add teams to it!',
-                style : {overflowWrap : 'break-word'}
-            },
+        const items = [            
             {
                 header : event_name,
                 meta : 'Name of the Event '
@@ -40,6 +34,12 @@ class EventShow extends Component {
                 header : event_desc,
                 meta : 'Description of the event!',
                 description : 'This is what the event is all abbount'
+            },
+            {
+                header : manager,
+                meta : 'Address of the Manager',
+                description : 'The manager who created this event and can add teams to it!',
+                style : {overflowWrap : 'break-word'}
             },
             {
                 header : teamsCount,
@@ -53,27 +53,47 @@ class EventShow extends Component {
 
 
         ];
-        return <Card.Group items = {items}/>;
+        return (
+            <div class="text-3xl italic bg-gradient-to-r from-cyan-600 via-blue-700 to-green-600 shadow-md p-4">
+                <Card.Group items={items} />
+            </div>
+            );
     }
     render(){
         return (
-            <Layout>
-                <h2>Event Show</h2>
-                <Grid>
+            <div>
+                <script src="https://cdn.tailwindcss.com"></script>
+                <Layout>
+                <div class="h-screen bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-gray-900 to-gray-600 ">
+                        <div class="mx-auto animate-pulse  bg-slate-200 w-1/2">
+                        <div class="italics text-center text-5xl font-semibold m-4">
+                            <h2>Event Show</h2>
+                        </div>
+                        </div>
+                        
+                        <div class="m-10 p-5 flex justify-center ">
+                            <Grid>
 
-                    <Grid.Column>
-                        {this.renderCards()}
-                        <br></br>
-                        <h3>To view all the teams participating in this Event...</h3>
-                        <Link route = {`/events/${this.props.address}/teams`}>
-                            <a>
-                                <Button primary>View all team!</Button>
-                            </a>
-                            </Link>
-                    </Grid.Column>
-                </Grid>
-            </Layout>
-        );
+                                <Grid.Column>
+                                    {this.renderCards()}
+                                    <br></br>
+                                    <h3 class="border-solid border-4 bg-gradient-to-r from-gray-800 via-slate-600 to-blue-300 text-white rounded-xl h-20 pt-3 text-5xl text-center font-semibold ">To view all the teams participating in this Event...</h3>
+                                    <Link route={`/events/${this.props.address}/teams`}>
+                                        <a>
+                                            <button type="button"
+                                                class="text-xl flex justify-center mx-auto rounded-lg cursor-pointer animate-bounce p-2 mt-5 text-white font-bold px-6 py-3 h-12 w-48 bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 hover:from-pink-500 hover:to-yellow-500">View all team!
+                                            </button>
+                                        </a>
+                                    </Link>
+                                </Grid.Column>
+                            </Grid>
+                        </div>
+
+                </div>
+                </Layout>
+
+            </div>
+        );
     }
 }
 export default EventShow;

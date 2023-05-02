@@ -8,7 +8,7 @@ class TeamRow extends Component {
         const event_vote = EventVoting(this.props.address);
         const accounts = await web3.eth.getAccounts();
         if (accounts.length > 0) {
-            await event_vote.methods.vote_here(this.props.id).send({ from: accounts[0] });
+            await event_vote.methods.voteHere(this.props.id).send({ from: accounts[0] });
         } else {
             console.error("No accounts found!");
         }

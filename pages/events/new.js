@@ -31,7 +31,6 @@ class EventNew extends Component{
     };render() {
         return (
             <Layout>
-                <script src="https://cdn.tailwindcss.com"></script>
                 <div class="h-screen bg-gradient-to-r from-rose-100 to-teal-100">
                 <div class="animate-bounce flex justify-center h-6 m-20 ">
                     <h3 class="font-semibold text-5xl m-10 pu-5">Create an Event!</h3>
