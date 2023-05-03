@@ -1,6 +1,9 @@
 const routes = require('next-routes')();   //returns a function
 
 routes
+    .add('/Login','/Login')
+    .add('/Register','/Register')
+    .add('/index','/index')
     .add('/events/new', '/events/new')
     .add('/events/:address', '/events/show')
     .add('/events/:address/teams', '/events/teams/index')

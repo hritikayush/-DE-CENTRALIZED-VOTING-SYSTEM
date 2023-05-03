@@ -2,16 +2,26 @@ import React, { Component } from "react";
 import { Form, Button, Message, Input, TextArea } from "semantic-ui-react";
 import EventVoting from "../../../ethereum/events";
 import web3 from "../../../ethereum/web3";
+import confetti from "https://cdn.skypack.dev/canvas-confetti@1";
+
 import Layout from "../../../components/Layout";
 
 class WinnerIndex extends Component {
   static async getInitialProps(props) {
     const { address } = props.query;
+   
     const event_vote = EventVoting(address);
     const winner = await event_vote.methods.showWinner().call();
     return { winner, address };
   }
 
+  componentDidMount(){
+    confetti({
+      particleCount: 1000,
+      spread: 500,
+      startVelocity:100,
+             });
+  }
   render() {
     //console.log(this.props.address);
     return (
