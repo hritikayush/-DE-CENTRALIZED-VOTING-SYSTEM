@@ -7,7 +7,7 @@ import { Router } from '../routes';
 import React,{Component} from "react";
 
 class Login extends Component{
-state={
+    state={
             error:'',
         };
     handleSubmit = async (event) => {
@@ -27,8 +27,9 @@ state={
     
     render(){
         return (
-            <Layout>
+            
             <div className="h-screen bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-gray-900 to-gray-600 text-white">
+                <script src="https://cdn.tailwindcss.com"></script>
                 <div className="h-1/5">
                 <h2 className="text-5xl text-center flex justify-center m-auto"> Log In</h2>
                 </div>
@@ -36,21 +37,26 @@ state={
                 <form onSubmit={this.handleSubmit}>
                 <input className="m-1 text-black" type="text" name="email" placeholder="Email"></input>
                 <input className="m-1 text-black" type="password" name="password" placeholder="Password"></input>
-                <input className="m-1" type="submit"></input>
+                <input className="m-1 border-2 border-solid rounded-lg px-2 py-1 border-zinc-200 shadow-md text-black Pastel bg-gradient-to-tr from-violet-500 to-orange-300  hover:from-pink-500 hover:to-yellow-500 hover:text-black" type="submit"></input>
                 </form>
                 <div className="text-3xl p-5 h-8 italic">
+                <p className='text-2xl m-2'>
+                        Click Here to Create a new Account
+                    </p>
                 <Link route="/Register">
-                    <a className="text-center font-semibold place-content-center italic border-2 rounded-md border-zinc-200 shadow-md text-black Pastel bg-gradient-to-tr from-violet-500 to-orange-300  hover:from-pink-500 hover:to-yellow-500 hover:text-black">
+                    
+                    <a className="mt-2 text-center font-semibold place-content-center italic border-2 rounded-md border-zinc-200 shadow-md text-black Pastel bg-gradient-to-tr from-violet-500 to-orange-300  hover:from-pink-500 hover:to-yellow-500 hover:text-black">
                         Register
                     </a>
                 </Link>
                 </div>
-
-                    <h3 className="m-8">{this.state.error}</h3>
+                <div className='flex justify-center mb-9'>
+                <p className='absolute bottom-1/2 '>{this.state.error}</p>
+                </div>
+                    
                 </div>
                 
             </div>
-            </Layout>    
         )
     };
     

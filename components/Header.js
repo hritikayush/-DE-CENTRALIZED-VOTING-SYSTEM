@@ -13,16 +13,10 @@ export default () => {
                         Home
                     </a>
                 </Link>
-                <Link route="/Login">
+                <Link route="/">
                     <a className="pt-2 text-xl ml-3 mu-3 w-36 text-center font-semibold place-content-center italic pu-5 border-2 rounded-md border-zinc-200 shadow-md text-black Pastel bg-gradient-to-tr from-violet-500 to-orange-300  hover:from-pink-500 hover:to-yellow-500 hover:text-black">
 
-                        Login
-                    </a>
-                </Link>
-                <Link route="/Register">
-                    <a className="pt-2 text-xl ml-3 mu-3 w-36 text-center font-semibold place-content-center italic pu-5 border-2 rounded-md border-zinc-200 shadow-md text-black Pastel bg-gradient-to-tr from-violet-500 to-orange-300  hover:from-pink-500 hover:to-yellow-500 hover:text-black">
-
-                        Register
+                        Logout
                     </a>
                 </Link>
                 <Menu.Menu position="right">

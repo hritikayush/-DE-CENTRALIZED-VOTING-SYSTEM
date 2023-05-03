@@ -1,3 +1,14 @@
+/*
+<div>
+                    <h3>Submissions:</h3>
+                    <ul>
+                        {this.state.submissions.map((submission, index) => (
+                            <li key={index}>{submission.email} - {submission.password}</li>
+                        ))}
+                    </ul>
+                </div>
+*/
+
 import React from "react"
 import { Component } from "react"
 import { render } from "react-dom"
@@ -25,13 +36,13 @@ class Register extends Component{
             submissions: [...prevState.submissions, data],
         }));
         submissions.set(data.email, data.password); 
-        Router.pushRoute(`/Login`);
+        Router.pushRoute(`/`);
     }
 
     render(){
         return (
-            <Layout>
             <div className="h-screen bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-gray-900 to-gray-600 text-white">
+                <script src="https://cdn.tailwindcss.com"></script>
                 <div className="h-1/5">
                 <h2 className="text-5xl text-center flex justify-center m-auto">Register</h2>
                 </div>
@@ -39,12 +50,11 @@ class Register extends Component{
                 <form onSubmit={this.handleSubmit}>
                 <input className="m-1 text-black" type="text" name="email" placeholder="Email"></input>
                 <input className="m-1 text-black" type="password" name="password" placeholder="Password"></input>
-                <input className="m-1" type="submit"></input>
+                <input className="m-1 border-2 border-solid rounded-lg px-2 py-1 border-zinc-200 shadow-md text-black Pastel bg-gradient-to-tr from-violet-500 to-orange-300  hover:from-pink-500 hover:to-yellow-500 hover:text-black" type="submit"></input>
                 </form>              
                 </div>
-                
-            </div>
-            </Layout>    
+
+            </div>    
         )
     };
     

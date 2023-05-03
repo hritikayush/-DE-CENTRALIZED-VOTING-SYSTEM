@@ -33,7 +33,7 @@ class EventShow extends Component {
             {
                 header : event_desc,
                 meta : 'Description of the event!',
-                description : 'This is what the event is all abbount'
+                description : 'This is what the event is all about'
             },
             {
                 header : manager,
@@ -93,7 +93,5 @@ class EventShow extends Component {
                 </Layout>
 
             </div>
-        );
-    }
-}
+);}}
 export default EventShow;

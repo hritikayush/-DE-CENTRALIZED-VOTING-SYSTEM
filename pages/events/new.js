@@ -22,7 +22,7 @@ class EventNew extends Component{
         .send({
             from : accounts[0]
         });
-        Router.pushRoute('/');
+        Router.pushRoute('/home');
         }
         catch(err){
             this.setState({errorMessage : err.message});
@@ -39,17 +39,17 @@ class EventNew extends Component{
                 <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
                     <Form.Field>
                         <div className="text-white p-20 m-40 bg-gradient-to-r from-gray-700 via-gray-900 to-black text-center md:text-left space-y-4 text-lg font-medium">
-                            <label>Enter the domain in which you want to organize an event !!</label>
+                            <label>Enter Name of the Event : </label>
                             <Input
-                                value={this.state.event_desc}
-                                onChange={event =>
-                                    this.setState({ event_desc: event.target.value })}
-                            />
-                            <label>Describe about your organizing event !!</label>
-                            <TextArea
                                 value={this.state.event_name}
                                 onChange={event =>
                                     this.setState({ event_name: event.target.value })}
+                            />
+                            <label>Describe about your organizing event :</label>
+                            <TextArea
+                                value={this.state.event_desc}
+                                onChange={event =>
+                                    this.setState({ event_desc: event.target.value })}
                             />
                         </div>
                     </Form.Field>
@@ -66,4 +66,4 @@ class EventNew extends Component{
     };
 }
 
-export default EventNew;
+export default EventNew;

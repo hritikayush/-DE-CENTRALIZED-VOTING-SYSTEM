@@ -14,7 +14,6 @@ contract EventFactory{
     }
 }
 
-
 contract EventVoting{
     struct Team {
         string name;
@@ -43,7 +42,7 @@ contract EventVoting{
         _;
     }
 
-    function addTeam(string name, string description) public restricted{
+    function addTeam(string name, string description) public{
         teamCounts ++;
         Team memory newTeam = Team({
             name : name,
