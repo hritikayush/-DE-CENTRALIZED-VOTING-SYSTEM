@@ -1,4 +1,4 @@
-# -DE-CENTRALIZED-VOTING-SYSTEM
+# DE-CENTRALIZED-VOTING-SYSTEM
 
 Its a new age Decentralized Voting System which helps to have a transparent, manipulation-free Voting process for any ongoing events/elections.
 Any Blockchain n/w user who is using this application would be knowing every detail about each and every contestant having their candidature in election process.
