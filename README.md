@@ -13,6 +13,6 @@ Some of the tools and technologies used for developing this prototype :
 2.ReactJS Framework for building the User Interface of the System (Frontend)
 3.Tailwind CSS for designing the Interfeace(Frontend)
 4.Mocha test framework for testing the smart contracts 
-5.Truffle for building and deploying this Blockchain web-app
+5.Truffle for building and deploying this Blockchain web-app 
 6.Metamask Wallet for each and every transactions taking place in the Ethereum Network
 7.Ethereum Network where all the data and transactions ae being stored 
